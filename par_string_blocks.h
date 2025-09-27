@@ -120,6 +120,10 @@ void parsb_write_blocks_to_file(parsb_context*, const char* filename);
 
 #ifdef PAR_STRING_BLOCKS_IMPLEMENTATION
 
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE  // required for str(n)dup
+#endif  // _GNU_SOURCE
+
 #include <assert.h>
 #include <ctype.h>
 #include <stdlib.h>
